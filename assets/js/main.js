@@ -254,19 +254,6 @@
   });
 
   /**
-   * Cursor glow effect
-   */
-  const cursorGlow = select('.cursor-glow');
-  if (cursorGlow) {
-    document.addEventListener('mousemove', (e) => {
-      if (document.body.classList.contains('dark-mode')) {
-        cursorGlow.style.left = `${e.clientX}px`;
-        cursorGlow.style.top = `${e.clientY}px`;
-      }
-    });
-  }
-
-  /**
    * Dark mode toggle
    */
   const themeToggleBtn = select('.theme-toggle-btn');
