@@ -253,4 +253,44 @@
     })
   });
 
+  /**
+   * Dark mode toggle
+   */
+  const themeToggleBtn = select('.theme-toggle-btn');
+  const themeToggleIcon = select('.theme-toggle-btn i');
+
+  // Function to apply the saved theme
+  const applyTheme = (theme) => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+      if (themeToggleIcon) {
+        themeToggleIcon.classList.remove('bi-sun');
+        themeToggleIcon.classList.add('bi-moon');
+      }
+    } else {
+      document.body.classList.remove('dark-mode');
+      if (themeToggleIcon) {
+        themeToggleIcon.classList.remove('bi-moon');
+        themeToggleIcon.classList.add('bi-sun');
+      }
+    }
+  };
+
+  // Check for saved theme in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  }
+
+  on('click', '.theme-toggle-btn', function(e) {
+    document.body.classList.toggle('dark-mode');
+    
+    // Save the theme preference
+    let currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', currentTheme);
+
+    // Update the icon
+    applyTheme(currentTheme);
+  });
+
 })()
