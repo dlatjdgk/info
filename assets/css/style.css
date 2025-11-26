@@ -1048,3 +1048,13 @@ body.dark-mode .theme-toggle-btn {
     background-color: #f8c32b;
     color: #121212;
 }
+@keyframes debug-flash {
+  0% { border-color: red; }
+  50% { border-color: yellow; }
+  100% { border-color: red; }
+}
+
+body {
+  border: 10px solid red !important;
+  animation: debug-flash 1s infinite !important;
+}
