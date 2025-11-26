@@ -951,7 +951,6 @@ section {
   z-index: 9999;
   border: 0;
   font-size: 20px;
-  transition: all 0.4s;
   outline: none !important;
   background-color: #006f5f;
   color: #fff;
@@ -963,6 +962,8 @@ section {
   line-height: 0;
   border-radius: 50px;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Adjust position on small screens where mobile nav is visible */
