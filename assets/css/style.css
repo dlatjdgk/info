@@ -942,19 +942,19 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Theme Toggle Button & Dark Mode
+# Theme Toggle Button
 --------------------------------------------------------------*/
 .theme-toggle-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 40px;
-  z-index: 9998;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 9999;
   border: 0;
   font-size: 20px;
   transition: all 0.4s;
   outline: none !important;
-  background-color: #f8c32b;
-  color: #006f5f;
+  background-color: #006f5f;
+  color: #fff;
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -965,7 +965,16 @@ section {
   cursor: pointer;
 }
 
-/* Dark Mode Styles */
+/* Adjust position on small screens where mobile nav is visible */
+@media (max-width: 1199px) {
+  .theme-toggle-btn {
+    right: 60px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Dark Mode Styles
+--------------------------------------------------------------*/
 body.dark-mode {
   color: #eee;
   background-color: #121212;
@@ -1031,6 +1040,10 @@ body.dark-mode .back-to-top i {
 }
 
 body.dark-mode .mobile-nav-toggle {
+    background-color: #006f5f; /* Keep original color or change as needed */
+}
+
+body.dark-mode .theme-toggle-btn {
     background-color: #f8c32b;
     color: #121212;
 }
